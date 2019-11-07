@@ -9,10 +9,10 @@ layout: default
 
   {{ content }}
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Recent posts" }}</h2>
+  {%- if paginator.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title }}</h2>
     <ul class="post-list">
-      {%- for post in site.posts limit:site.recent_posts_limit -%}
+      {%- for post in paginator.posts -%}
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -27,10 +27,19 @@ layout: default
       </li>
       {%- endfor -%}
     </ul>
-
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-  {%- else -%}
-    <h2 class="post-list-heading">There are no posts yet.</h2>
   {%- endif -%}
 
+  <div class="pagination">
+    <ul>
+    {% if paginator.previous_page %}
+      <li> <a href="{{ paginator.previous_page_path }}" class="previous">← Newer Posts</a> </li>
+    {% endif %}
+
+    {% if paginator.next_page %}
+      <li> <a href="{{ paginator.next_page_path }}" class="next">Older Posts →</a> </li>
+    {% endif %}
+    </ul>
+  </div>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 </div>

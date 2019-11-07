@@ -31,8 +31,8 @@ github_username: hyeoksuhan
 disqus:
   shortname: comments
 
-#paginate: 10                  # 페이징 처리 개수
-#paginate_path: "/page:num/"   # URL 규칙
+paginate: 10                  # 페이징 처리 개수
+paginate_path: "/page:num/"   # URL 규칙
 
 show_excerpts: true
 excerpt_separator: <!--more-->
@@ -42,8 +42,6 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-paginate
-
-recent_posts_limit: 2
 
 defaults:
   -
