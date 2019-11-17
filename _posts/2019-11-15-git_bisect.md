@@ -1,7 +1,7 @@
 ---
 title: git bisect로 문제가 있는 커밋 찾기
 layout: post
-tags: git
+tags: [git]
 categories: git
 ---
 현재 HEAD가 가리키는 커밋에서 typescript build시 문제가 있었다.

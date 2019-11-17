@@ -5,11 +5,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   I'm a developer.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hyeoksuhan.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: hyeoksuhan
-github_username: hyeoksuhan
-
-disqus:
-  shortname: comments
+timezone: Asia/Seoul
+date_format: "%Y-%m-%d"
 
 paginate: 5
 paginate_path: "/page:num/"
@@ -18,18 +15,20 @@ show_excerpts: true
 excerpt_separator: <!--more-->
 
 theme: minima
-plugins:
-  - jekyll-tagging # related to _plugins/ext.rb, gem Gemfile group :jekyll_plugins
+
+collections:
+  tags:
+    output: true
+    permalink: /tags/:path/
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
+      type: tags
     values:
-      author: hshan
+      layout: tag
 
-tag_page_layout: tag_page
-tag_page_dir: tag
-tag_feed_layout: tag_feed
-tag_feed_dir: tag
-tag_permalink_style: pretty
+twitter_username: hyeoksuhan
+github_username: hyeoksuhan
+
+github: [metadata]
