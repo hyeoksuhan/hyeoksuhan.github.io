@@ -1,0 +1,11 @@
+.post-tags {
+  font-size: 0.9em;
+  a {
+    background: $lightgray;
+    padding: 0 .5em;
+    border-radius: 4px;
+  }
+  a + a {
+    margin-left: .25em;
+  }
+}
