@@ -20,7 +20,7 @@ resource "aws_instance" "api_server" {
 정답은 count를 4에서 3으로 줄이는 것이고, 3으로 줄이게 되면 마지막 index에 위치한 instance 즉, `aws_instance.api_server[3]`이 삭제가 된다.
 <!--more-->
 
-당연하게 보일 수 있겠지만 처음에 `api-4`를 삭제하려고 했을 때 count를 줄이면 AWS auto scaling group의 기본 정책처럼 제일 오래된 인스턴스
+당연하게 보일 수 있겠지만 처음에 `api-4`를 삭제하려고 했을 때 count를 줄이면 AWS auto scaling group의 기본 정책처럼 생생된 시간/az 등을 고려하여 인스턴스
 를 삭제할것 같다는 생각을 했었다. 하지만 count를 줄였을 때 그냥 logical하게 동작해서 마지막 index의 인스턴스를 삭제가 되었다.
 terraform이 AWS만 지원하는것이 아니기도 하고 굳이 그런 정책을 따를 이유가 없다는 생각이 뒤늦게 들었다.
 
