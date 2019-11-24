@@ -1,8 +1,8 @@
-title: Welcome
+title: 개발이야기
 email: hyeoksu.han@gmail.com
 author: hshan
 description: >- # this means to ignore newlines until "baseurl:"
-  I'm a developer.
+  지금은 서버개발자. 개발을 하면서 겪고 생각한 것들을 정리(하려고 노력하는)중.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hyeoksuhan.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 timezone: Asia/Seoul
@@ -28,7 +28,8 @@ defaults:
     values:
       layout: tag
 
-twitter_username: hyeoksuhan
+stackoverflow_userid: 7129790
+stackoverflow_username: hshan
 github_username: hyeoksuhan
 
 github: [metadata]
