@@ -2,7 +2,7 @@
 title: terraform random_shuffle로 랜덤하게 리소스 가져오기
 layout: post
 tags: [terraform]
-categories: git
+categories: terraform
 ---
 다음과 같이 리소스가 정의되어 있을 때
 
