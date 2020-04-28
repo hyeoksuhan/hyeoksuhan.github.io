@@ -127,8 +127,11 @@ sudo vi /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Dev
 
 로 수정하니 설치가 되었다 (just 공백 추가)
 
-위의 config.h의 경로는 os의 버전과 ruby의 버전에 따라 바뀔 수 있으니 적절하게 찾아가서 수정해야 한다
+위의 config.h의 경로와 수정할 line 위치는 os의 버전과 ruby의 버전에 따라 바뀔 수 있으니 적절하게 찾아가서 수정해야 한다
 
+검색하면서 알게 되었는데 os 버전이 바뀌고 ruby의 버전이 바뀌어도 동일한 문제가 계속 발생하고 있다
+
+<br>
 이제 문제의? project repo로 이동해 github-linugist를 실행해 보았다
 
 주의할 점은 현재 파일을 기준으로 통계를 내는 것이 아니라 `git의 HEAD pointer를 기준으로 계산`을 하므로 commit을 하고 실행해야 한다
@@ -137,12 +140,18 @@ cd /path/to/project
 github-linguist
 ```
 
-
 ![Image Alt](/images/20200429-2.png){: width="30%" height="30%"}
+<br>\<.gitattributes 적용전\>
 
-해결
+
+![Image Alt](/images/20200429-3.png){: width="30%" height="30%"}
+<br>\<적용후\>
+
+remote의 통계값과 local에서의 적용후의 통계값이 비슷하고, 적용후에 TSQL가 사라졌으므로 해결
 
 된 줄 알았으나
 
 local에서는 잘 적용이 된 것으로 결과가 나왔지만 remote repo는 통계가 그대로 였는데, 낮은 우선순위의 background job으로 등록되어 적용에 시간이 좀 걸린다고 하니 믿고 기다려 보기로 한다
+
+*\+ 기존에 있던 PLpgSQL은 남겨두고 TSQL만 제외하도록 수정하는 것도 고려*
 
