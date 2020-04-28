@@ -107,7 +107,7 @@ Gem files will remain installed in /Library/Ruby/Gems/2.6.0/gems/charlock_holmes
 Results logged to /Library/Ruby/Gems/2.6.0/extensions/universal-darwin-19/2.6.0/charlock_holmes-0.7.7/gem_make.out
 ```
 
-에러메시지를 확인해 보니 루비관련.. 헤더파일의 전처리 정의에 문제가 있어 보였고 검색을 통해 아래와 같이 헤더파일을 직접 수정하여 해결하였다
+에러메시지를 확인해 보니 루비관련.. 헤더파일의 전처리기 정의에 문제가 있어 보였고 검색을 통해 아래와 같이 헤더파일을 직접 수정하여 해결하였다
 
 ```bash
 sudo vi /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/include/ruby-2.6.0/universal-darwin19/ruby/config.h
@@ -130,6 +130,7 @@ sudo vi /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Dev
 위의 config.h의 경로는 os의 버전과 ruby의 버전에 따라 바뀔 수 있으니 적절하게 찾아가서 수정해야 한다
 
 이제 문제의? project repo로 이동해 github-linugist를 실행해 보았다
+
 주의할 점은 현재 파일을 기준으로 통계를 내는 것이 아니라 `git의 HEAD pointer를 기준으로 계산`을 하므로 commit을 하고 실행해야 한다
 ```bash
 cd /path/to/project
